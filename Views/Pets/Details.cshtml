@@ -1,0 +1,42 @@
+@model PetcoApp.Models.Pets
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pets</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.apelido_Animal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.apelido_Animal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tipo.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.servico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.servico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dia_chegada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dia_chegada)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

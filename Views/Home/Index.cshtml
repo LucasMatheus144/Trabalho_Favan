@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+
+
+    body{
+        background-color: #EC8e01;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    button {
+        padding: 5px; min-width: 200px; border: none; background-color: #EC8E01; color: #fff;border-radius: 30px; font-weight: 700;
+        transition: .2s 
+        ease-in-out;
+        padding: 8px;
+        text-transform: uppercase;
+    }
+
+    button:hover{
+        border: 1px solid #EC8E01;
+        background-color: #fff;
+        color: #EC8E01;
+        transition: .2s ease-in-out;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .link:hover {
+        color: #EC8E01;
+        text-decoration: none;
+    }
+
+    .main__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        box-shadow: 10px 10px rgba(0, 0, 0, .06);
+        padding: 60px;
+        margin: 80px auto;
+        border-radius: 30px;
+        background-color: #fff;
+        justify-content: center;
+    }
+
+    p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    
+</style>
+
+<div class="main__container">
+    <div class="text-center">
+        <h1>PETCO</h1>
+        <p>Cadastro e registro de pets</p>
+    </div>
+
+    <form asp-controller="Pets">
+        <br><br>
+        <p>Registro Pets</p>
+
+        <button>Enviar</button>
+    </form>
+
+    
+    <form asp-controller="Tipo">
+        <br><br>
+        <p>Registro Tipo</p>
+        <button>Enviar</button>
+    </form>
+
+    <form >
+        <br><br>
+        <p>Auditoria Cadastro</p>
+       <button><a class="link" href="https://localhost:7077/api/Cadastro">Enviar</a></button> <!-- Nao tem como direcionar o forms por link -->
+        
+    </form>
+</div>

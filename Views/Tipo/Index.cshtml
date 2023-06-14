@@ -1,0 +1,69 @@
+@model IEnumerable<PetcoApp.Models.Tipo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+
+    body {
+        background: #EC8E01;
+    }
+
+    a {
+        color: #222;
+        transition: 0.4s;
+        text-decoration: none;
+    }
+
+    a:hover {
+        transition: 0.4s;
+        color: #EC8E01;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 900px;
+        border: 1px solid rgba(0, 0, 0, .06);
+        box-shadow: 10px 10px rgba(0, 0, 0, 0.6);
+        padding: 60px;
+        margin: 80px auto;
+        border-radius: 30px;
+        background-color: #fff;
+        justify-content: center;
+    }
+
+</style>
+
+<div class="center">
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
